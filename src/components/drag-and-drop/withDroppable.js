@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * Ensure the props of the resulting component
+ * are passed down to the component that will
+ * be rendered in the DOM
+ */
 const withDroppable = ({ handleDrop, initialState }) => Component => {
   return class extends React.Component {
     constructor(props) {
@@ -22,7 +27,7 @@ const withDroppable = ({ handleDrop, initialState }) => Component => {
       return (
         <Component
           onDrop={this.handleDrop}
-          onDragEnter={this.makeDropable}
+          onDragEnter={this.handleDragEnter}
           onDragOver={this.handleDragOver}
           onDragLeave={this.handleDragLeave}
           {...this.state}

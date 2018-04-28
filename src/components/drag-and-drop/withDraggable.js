@@ -6,8 +6,8 @@ import React from "react";
 const withDraggable = Component => {
   return class extends React.Component {
     handleDragStart = e => {
-      console.log(e.target.getAttribute("name"));
-      e.dataTransfer.setData("text/plain", e.target.getAttribute("name"));
+      const name = e.target.getAttribute("name");
+      e.dataTransfer.setData("text/plain", name);
     };
 
     render = () => (

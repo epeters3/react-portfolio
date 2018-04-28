@@ -2,6 +2,7 @@ import React from "react";
 import Panel from "../Panel";
 import styled from "styled-components";
 import withDroppable from "../drag-and-drop/withDroppable";
+import Input from "./Input";
 
 function handleDrop(e) {
   const data = e.dataTransfer.getData("text/plain");
@@ -11,19 +12,33 @@ function handleDrop(e) {
   e.preventDefault();
 }
 
-const TextArea = styled.textarea`
+const BigPanel = styled(Panel)`
   width: 100%;
   height: 70vh;
-  border: none;
-  outline: none;
-  resize: none;
 `;
 
-const EditablePanel = ({ children, ...props }) => (
-  <Panel {...props}>
-    <TextArea>{children}</TextArea>
-  </Panel>
-);
+class EditablePanel extends React.Component {
+  static defaultProps = {
+    components: {
+      p: "p",
+      input: Input
+    }
+  };
+
+  render = () => {
+    const { data, children, ...props } = this.props;
+    return (
+      <BigPanel {...props}>
+        {data.length > 0
+          ? data.map((name, i) => {
+              const Component = this.props.components[name];
+              return <Component key={`element-${i}`} />;
+            })
+          : children}
+      </BigPanel>
+    );
+  };
+}
 
 const dropConfig = { handleDrop, initialState: { data: [] } };
 
