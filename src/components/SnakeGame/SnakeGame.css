@@ -1,0 +1,52 @@
+@import '../../variables.css';
+
+.snakeGrid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* These three move the gameboard to the exact top-left corner */
+    height: 600px;
+    width: 900px;
+    background-image: url('./old-files/space.jpg');
+    z-index: 100;
+    /*Gives precedence as to what will be shown in the forefront*/
+}
+
+.scoreBoard {
+    position: absolute;
+    top: 0;
+    left: 925px;
+    /* These three move the gameboard to the exact top-left corner */
+    height: 100px;
+    width: 200px;
+    background-color: black;
+}
+
+#score {
+    color: white;
+    text-align: center;
+}
+
+div.snake {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* We'll be overriding the top and left. */
+    height: 15px;
+    width: 15px;
+    z-index: 300;
+    background-color: #FF0080;
+    /*border-radius: 50%;*/
+}
+
+div.food {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: goldenrod;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    z-index: 200;
+    box-shadow: 1px 1px 1px 1px goldenrod;
+}

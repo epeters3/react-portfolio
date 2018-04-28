@@ -1,0 +1,29 @@
+@import '../../variables.css';
+
+.sent {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.received {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sentBody {
+    border: none;
+    margin-bottom: 1%;
+    margin-top: 3%;
+}
+
+.receivedBody {
+    background-color: inherit;
+    margin-bottom: 1%;
+    margin-top: 3%;
+}
+
+.timestamp {
+    width: 100%;
+    text-align: right;
+    font-size: x-small;
+}

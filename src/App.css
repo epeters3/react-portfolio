@@ -1,0 +1,21 @@
+.app {
+}
+
+.wrapper {
+  padding: 1em;
+}
+
+.panelInPaper {
+  margin: 3%;
+}
+
+.flexContainerStart {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flexContainerVerticalCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
