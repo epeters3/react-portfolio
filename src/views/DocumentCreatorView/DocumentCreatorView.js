@@ -11,8 +11,8 @@ const DocumentCreatorView = () => (
     <Col sm={12} md={3}>
       <h3>Template Options</h3>
       <List>
-        <Choice name="input">Input</Choice>
-        <Choice name="p">Paragraph</Choice>
+        <Choice name="input">Short Answer</Choice>
+        <Choice name="textarea">Long Answer</Choice>
       </List>
     </Col>
     <Col sm={12} md={9}>

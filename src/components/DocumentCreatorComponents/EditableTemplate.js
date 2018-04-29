@@ -2,7 +2,8 @@ import React from "react";
 import Panel from "../Panel";
 import styled from "styled-components";
 import withDroppable from "../drag-and-drop/withDroppable";
-import Input from "./Input";
+import ShortAnswer from "./ShortAnswer";
+import LongAnswer from "./LongAnswer";
 
 function handleDrop(e) {
   const data = e.dataTransfer.getData("text/plain");
@@ -20,8 +21,8 @@ const BigPanel = styled(Panel)`
 class EditablePanel extends React.Component {
   static defaultProps = {
     components: {
-      p: "p",
-      input: Input
+      textarea: LongAnswer,
+      input: ShortAnswer
     }
   };
 
